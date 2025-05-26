@@ -16,6 +16,7 @@ db: # 数据库的连接信息
   collection: rms
 
 tags:
+  - \IP
   - \VibTF_4R
   - \VibTF_4phi
   - \VibTF_4Z
@@ -33,22 +34,7 @@ tags:
   - \VibV_9R
   - \VibV_14Ks
 
-#- '\\VibTF_4R'
-#- '\\VibTF_4phi'
-#- '\\VibTF_4Z'
-#- '\\VibTF_11R'
-#- '\\VibTF_11phi'
-#- '\\VibTF_11Z'
-#- '\\VibTF_7R'
-#- '\\VibTF_14R'
-#- '\\VibTF_9R'
-#- '\\VibV_5R'
-#- '\\VibV_5phiZ'
-#- '\\VibV_12R'
-#- '\\VibV_12phiZ'
-#- '\\VibV_7R'
-#- '\\VibV_9R'
-#- '\\VibV_14Ks'
+
 
 
 
