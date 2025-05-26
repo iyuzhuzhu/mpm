@@ -335,7 +335,7 @@ def create_folder(folder_path):
         os.makedirs(folder_path)
 
 
-def create_output_folder(output_path, shot, bm):
+def create_output_folder(output_path, shot):
     """
     创建输出的文件夹
     :param output_path: 输出地址（含被替换部分）
@@ -343,10 +343,7 @@ def create_output_folder(output_path, shot, bm):
     :param bm:
     :return:
     """
-    shot_2 = int(int(shot) / 100)
-    output_path = output_path.replace('$shot$', shot)
-    output_path = output_path.replace('$shot_2$', str(shot_2))
-    output_path = output_path.replace('$bm$', bm)
+    output_path = replace_shot_100(output_path, shot)
     # output_path = replace_path(output_path, shot, bm, sensor)
     try:
         create_folder(output_path)

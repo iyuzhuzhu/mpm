@@ -32,12 +32,5 @@ sensors:
   - "sensor5" # the prefix for this sensor, all fields of this sensor will have this prefix
   - "sensor6" # the prefix for this sensor, all fields of this sensor will have this prefix
 
-alarms:
-  - window: 10
-  - on: 8
-  - off: 6
-  - minor: 0.9
-  - major: 0.95
-  - fatal: 0.98
 
 

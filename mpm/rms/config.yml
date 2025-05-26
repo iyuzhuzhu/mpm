@@ -1,6 +1,6 @@
-data_source: D:/资源汇总/新球磨项目/Data/Daq/$bm$/$shot_2$00/$sensor$/$shot$.hdf5 # 数据地址
-Inference_path: D:/资源汇总/新球磨项目/Data/Inference/$bm$/$shot_2$00/$shot$ # 输出地址
-threshold_config_path: D:/资源汇总/新球磨项目/configs/threshold_configs/$bm$/rms_threshold_config.yml
+data_source: D:/study/mpm/data2/$shot_2$00/$shot$.hdf5 # 数据地址
+Inference_path: D:/study/mpm/results/result2/$shot_2$00/$shot$ # 输出地址
+#threshold_config_path: D:/资源汇总/新球磨项目/configs/threshold_configs/$bm$/rms_threshold_config.yml
 plot_config_path: D:/资源汇总/新球磨项目/configs/plot_configs/basic_plot_config/basic_plot_config.yml
 plot_desc_path: D:/资源汇总/新球磨项目/configs/plot_configs/basic_plot_config/basic_plot_desc.yml
 plot_desc_file: plot_desc.yml # 复制的画图配置文件的名称
@@ -12,21 +12,43 @@ training_shots: 5000
 
 db: # 数据库的连接信息
   connection: mongodb://localhost:27017/
-  db_name: bm
-  collection: $bm$_rms
+  db_name: mpm
+  collection: rms
 
-channels:
-- channel1: r
-- channel2: r
-- channel3: z
+tags:
+  - \VibTF_4R
+  - \VibTF_4phi
+  - \VibTF_4Z
+  - \VibTF_11R
+  - \VibTF_11phi
+  - \VibTF_11Z
+  - \VibTF_7R
+  - \VibTF_14R
+  - \VibTF_9R
+  - \VibV_5R
+  - \VibV_5phiZ
+  - \VibV_12R
+  - \VibV_12phiZ
+  - \VibV_7R
+  - \VibV_9R
+  - \VibV_14Ks
 
-sensors:
-- sensor1     # the prefix for this sensor, all fields of this sensor will have this prefix
-- sensor2     # the prefix for this sensor, all fields of this sensor will have this prefix
-- sensor3     # the prefix for this sensor, all fields of this sensor will have this prefix
-- sensor4     # the prefix for this sensor, all fields of this sensor will have this prefix
-- sensor5     # the prefix for this sensor, all fields of this sensor will have this prefix
-- sensor6     # the prefix for this sensor, all fields of this sensor will have this prefix
+#- '\\VibTF_4R'
+#- '\\VibTF_4phi'
+#- '\\VibTF_4Z'
+#- '\\VibTF_11R'
+#- '\\VibTF_11phi'
+#- '\\VibTF_11Z'
+#- '\\VibTF_7R'
+#- '\\VibTF_14R'
+#- '\\VibTF_9R'
+#- '\\VibV_5R'
+#- '\\VibV_5phiZ'
+#- '\\VibV_12R'
+#- '\\VibV_12phiZ'
+#- '\\VibV_7R'
+#- '\\VibV_9R'
+#- '\\VibV_14Ks'
 
 
 

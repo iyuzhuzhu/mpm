@@ -1,73 +1,41 @@
-from matplotlib import pyplot as plt
-import matplotlib
+import os
 import numpy as np
-# print(np.arange(0, 10, 1))
-# a=sorted([f.name for f in matplotlib.font_manager.fontManager.ttflist])
-#
-# for i in a:
-#     if i == 'SimHei':
-#         print(i)
 
+# 指定文件夹路径
+folder_path = r'D:\study\mpm\破裂炮号列表\J-TEXT'
 
-import logging
+# 获取文件夹中所有的.npy文件
+npy_files = [f for f in os.listdir(folder_path) if f.endswith('.npy')]
 
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import pandas as pd
+# 遍历并读取每个.npy文件
+for file_name in npy_files:
+    file_path = os.path.join(folder_path, file_name)
+    data = np.load(file_path)
 
-# 示例数据
-# data = {
-#     'date': ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-06', '2024-01-09'],
-#     'value': [10, 15, 13, 17, 18]
-# }
-data = ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-06', '2024-01-09']
-value = [10, 15, 13, 17, 18]
-# 将数据转换成 DataFrame 并解析日期
-df = pd.DataFrame(data)
-print(df)
-df[0] = pd.to_datetime(df[0])  # 将日期列转换为 datetime 类型
-print(df[0][0])
-# 创建图形
-fig, ax = plt.subplots()
+    # 打印文件名和数据形状（或直接打印数据）
+    print(f"File: {file_name}")
+    print(f"Data shape: {data.shape}")
+    print("Data content:")
+    print(data)
+    print("-" * 20)
 
-# 绘制数据
-ax.plot(df[0], value, marker='o')
+import os
+import numpy as np
 
-# 设置日期格式
-date_form = mdates.DateFormatter("%Y-%m-%d")
-ax.xaxis.set_major_formatter(date_form)
-# 使用自动日期定位器
-date_locator = mdates.AutoDateLocator(minticks=3, maxticks=7)
-ax.xaxis.set_major_locator(date_locator)
-# 自动调整日期标签，防止重叠
-fig.autofmt_xdate()
+# 指定文件夹路径
+folder_path = r'D:\study\mpm\破裂炮号列表'
 
-# 添加标题和标签
-plt.title('Time Series Trend')
-plt.xlabel('Date')
-plt.ylabel('Value')
+# 获取文件夹中所有的.npy文件
+npy_files = [f for f in os.listdir(folder_path) if f.endswith('.npy')]
 
-# 显示图形
-plt.show()
-# 配置日志
-# logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
-#
-# def some_function():
-#     try:
-#         # 你的代码
-#         1 / 0  # 示例：引发一个除零错误
-#     except Exception as e:
-#         logging.error(f"An error occurred: {e}")
-#         print(f"An error occurred: {e}")
-#
-# some_function()
-# input = "$bm$_rms>sensors.sensor1.r_rms"
-# input.replace('$bm$', 'bm1')
-# print(input)
-#
-# db_config = {
-#     "connection": "mongodb://localhost:27017/",
-#     "db_name": "bm",
-#     "collection": "bm1_rms"
-# }
-# print(db_config['connection', 'db_name'])
+# 遍历并读取每个.npy文件
+for file_name in npy_files:
+    file_path = os.path.join(folder_path, file_name)
+    data = np.load(file_path)
+
+    # 打印文件名和数据形状（或直接打印数据）
+    print(f"File: {file_name}")
+    print(f"Data shape: {data.shape}")
+    print("Data content:")
+    print(data)
+    print("-" * 40)

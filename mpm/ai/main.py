@@ -7,7 +7,7 @@ from ai.Train import preprocessing_training_data, create_train_model
 from ai.Inference import predict_single
 from pathlib import Path
 from ai.plot import plot_rec
-from alarmSystem.Data.db.collectionDB import CollectionDB
+# from alarmSystem.Data.db.collectionDB import CollectionDB
 
 
 class Ai(BasicModel):
