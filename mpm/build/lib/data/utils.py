@@ -8,6 +8,19 @@ def calculate_rms(data):
     return rms
 
 
+def remove_prefix(input_string: str, prefix: str) -> str:
+    """
+    去除输入字符串的指定前缀
+    :param input_string: 需要去除前缀的字符串
+    :param prefix: 需要去除的前缀
+    :return: 去掉了指定前缀的字符串，如果原字符串没有该前缀，则返回原字符串
+    """
+    if input_string.startswith(prefix):
+        return input_string[len(prefix):]
+    else:
+        return input_string
+
+
 def read_hdf5(file_path) -> dict:
     """
     读取HDF5文件的内容，返回字典。输出结构如下

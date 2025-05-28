@@ -51,9 +51,9 @@ class Rms(BasicModel):
         print(tags_rms)
         print(avg_rms)
         # print(V_avg_rms)
-        Bt = raw_data['data']['\\Bt']
-        fs = Bt['attrs']['SampleRate']
-        dataset = Bt['dataset']
+        IP = raw_data['data']['\\IP']
+        fs = IP['attrs']['SampleRate']
+        dataset = IP['dataset']
         plot_time_series(fs, len(dataset), dataset)
 
     def calculate_tags_rms(self, raw_data, remove_pre='\\Vib'):

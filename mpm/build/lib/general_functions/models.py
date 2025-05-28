@@ -15,8 +15,10 @@ class BasicModel:
 
         self.collection_name = self.config['db']['collection']
         self.client, self.db = connect_mongodb_database(self.config['db']['connection'], self.config['db']['db_name'])
-        raw_data = loader.get_raw_data(self.data_source, self.shot)
+        # raw_data = loader.get_raw_data(self.data_source, self.shot)
 
+    def load_raw_data(self):
+        return loader.get_raw_data(self.data_source, self.shot)
 
     def create_output_folder(self):
         output_path = functions.create_output_folder(self.config['Inference_path'], self.shot)
