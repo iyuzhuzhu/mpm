@@ -56,6 +56,13 @@ class Rms(BasicModel):
         dataset = IP['dataset']
         plot_time_series(fs, len(dataset), dataset)
 
+    @staticmethod
+    def judge_is_disrupt(ip_rms):
+        if ip_rms > 51.424:
+            return True
+        else:
+            return False
+
     def calculate_tags_rms(self, raw_data, remove_pre='\\Vib'):
         tags_rms = {}
         data = raw_data['data']
@@ -68,6 +75,13 @@ class Rms(BasicModel):
             else:
                 tags_rms[key] = None
         return tags_rms
+
+    def result(self):
+        pass
+
+    def summary(self, tags_rms, avg_rms):
+        summary = {}
+        summary['shot'] = int(self.shot)
 
     def plot_model(self, sensors_data=None, sample_data=None):
         """
@@ -139,7 +153,7 @@ def main():
     # # 输入参数
     # config_path, name, shot = functions.get_input_params('rms')
     config_path = './config.yml'
-    shot = '1103600'
+    shot = '1103601'
     Rms(config_path, shot, model_name='rms')
     # test_shots_calculate()
 
