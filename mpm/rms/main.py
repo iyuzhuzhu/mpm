@@ -5,6 +5,7 @@ from general_functions.models import BasicModel
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def generate_time_vector(Fs, L):
     """
     根据采样频率和信号长度生成时间向量。
@@ -12,11 +13,11 @@ def generate_time_vector(Fs, L):
     :param L: 信号长度 (number of samples)
     :return: 时间向量
     """
-    T = 1 / Fs           # 采样周期
+    T = 1 / Fs  # 采样周期
     return np.arange(0, L) * T  # 时间向量
 
 
-def plot_time_series(Fs, L, data, title=None, xlabel='time (s)', ylabel='幅值', grid=True):
+def plot_time_series(Fs, L, data, title=None, xlabel='time (s)', grid=True):
     """
     绘制时序数据图，给定采样频率和信号长度。
     :param Fs: 采样频率 (samples per second)
@@ -33,7 +34,7 @@ def plot_time_series(Fs, L, data, title=None, xlabel='time (s)', ylabel='幅值'
     if title:
         plt.title(title)
     plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
+    # plt.ylabel(ylabel)
     if grid:
         plt.grid(True, linestyle='--', alpha=0.6)
     plt.tight_layout()
@@ -56,7 +57,7 @@ class Rms(BasicModel):
         dataset = IP['dataset']
         plot_time_series(fs, len(dataset), dataset)
 
-    def calculate_tags_rms(self, raw_data, remove_pre='\\Vib'):
+    def calculate_tags_rms(self, raw_data, remove_pre=None):
         tags_rms = {}
         data = raw_data['data']
         for tag in self.tags:
@@ -79,7 +80,8 @@ class Rms(BasicModel):
         output_path = functions.create_output_folder(self.config['Inference_path'], self.shot, self.name)
         output_folder = os.path.join(output_path, save_plot_folder)
         functions.create_folder(output_folder)
-        plots.copy_and_rename_file(self.config['plot_desc_path'], output_folder, self.config['plot_desc_file'])  # 复制plot_desc
+        plots.copy_and_rename_file(self.config['plot_desc_path'], output_folder,
+                                   self.config['plot_desc_file'])  # 复制plot_desc
         for plot_data in plot_config_data['plots']:
             sensor = plot_data['name']
             channel = plot_data['plot_channel']
