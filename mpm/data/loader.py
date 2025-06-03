@@ -17,3 +17,5 @@ def get_raw_data(data_source, shot: str) -> dict:
     return raw_data
 
 
+def get_is_disruption():
+    pass

@@ -45,6 +45,7 @@ class Rms(BasicModel):
     def __init__(self, config_path, shot, model_name='rms'):
         super().__init__(config_path, shot, model_name)
         raw_data = self.load_raw_data()
+        print(self.config['is_disruption_db'])
         # print(raw_data)
         tags_rms = self.calculate_tags_rms(raw_data)
         avg_rms = self.calculate_directional_average_rms(tags_rms)

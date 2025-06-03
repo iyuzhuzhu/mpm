@@ -15,6 +15,17 @@ db: # 数据库的连接信息
   db_name: mpm
   collection: rms
 
+is_disruption_db:
+  connection_str:
+    host: www.limfx.pro
+    port: 24007
+    database: DDB
+    username: DDBUser
+    password: tokamak!
+  collection: tags
+
+
+
 tags:
   - \IP
   - \VibTF_4R
